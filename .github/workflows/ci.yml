@@ -1,4 +1,4 @@
-name: Beginner CI
+name: Quiz Application CI
 
 on:
   push:
@@ -6,11 +6,11 @@ on:
       - main
 
 jobs:
-  check-project:
+  validate-project:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Code
+      - name: Checkout Source Code
         uses: actions/checkout@v4
 
       - name: List Repository Files
@@ -19,5 +19,20 @@ jobs:
       - name: Verify index.html Exists
         run: test -f index.html
 
-      - name: Success Message
-        run: echo "Beginner CI Pipeline Passed"
+      - name: Verify README Exists
+        run: test -f README.md
+
+      - name: Verify JS Folder Exists
+        run: test -d JS
+
+      - name: Verify Pages Folder Exists
+        run: test -d pages
+
+      - name: Verify Styles Folder Exists
+        run: test -d styles
+
+      - name: Verify Resources Folder Exists
+        run: test -d resources
+
+      - name: Validation Complete
+        run: echo "Project structure validation completed successfully"
