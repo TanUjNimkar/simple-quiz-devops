@@ -17,9 +17,6 @@ jobs:
       - name: Checkout Source Code
         uses: actions/checkout@v4
 
-      - name: List Repository Files
-        run: ls -la
-
       - name: Verify index.html Exists
         run: test -f index.html
 
@@ -38,5 +35,8 @@ jobs:
       - name: Verify Resources Folder Exists
         run: test -d resources
 
+      - name: Build Docker Image
+        run: docker build -t simple-quiz-app:${{ github.sha }} .
+
       - name: Validation Complete
-        run: echo "Project structure validation completed successfully"
+        run: echo "Project validation and Docker build completed successfully"
