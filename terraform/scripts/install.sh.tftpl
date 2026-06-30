@@ -1,0 +1,19 @@
+#!/bin/bash
+
+set -e
+
+apt-get update -y
+apt-get upgrade -y
+
+apt-get install -y docker.io
+
+systemctl enable docker
+systemctl start docker
+
+docker pull ${dockerhub_username}/simple-quiz-devops:latest
+
+docker run -d \
+  --name simple-quiz \
+  --restart unless-stopped \
+  -p 80:80 \
+  ${dockerhub_username}/simple-quiz-devops:latest
