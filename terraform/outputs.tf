@@ -1,11 +1,11 @@
 output "security_group_id" {
   description = "Security Group ID"
-  value       = aws_security_group.quiz_app_sg.id
+  value       = module.security_group.security_group_id
 }
 
 output "security_group_name" {
   description = "Security Group Name"
-  value       = aws_security_group.quiz_app_sg.name
+  value       = module.security_group.security_group_name
 }
 
 output "instance_id" {
@@ -22,6 +22,7 @@ output "public_dns" {
   description = "Public DNS"
   value       = aws_instance.quiz_app_server.public_dns
 }
+
 output "elastic_ip" {
   description = "Elastic IP Address"
   value       = aws_eip.quiz_app_eip.public_ip

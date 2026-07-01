@@ -4,8 +4,8 @@ resource "aws_instance" "quiz_app_server" {
   key_name      = "NewAWS"
 
   vpc_security_group_ids = [
-    aws_security_group.quiz_app_sg.id
-  ]
+  module.security_group.security_group_id
+]
 
   user_data = templatefile("${path.module}/scripts/install.sh.tftpl", {
     dockerhub_username = var.dockerhub_username
