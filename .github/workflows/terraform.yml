@@ -11,6 +11,10 @@ on:
     paths:
       - "terraform/**"
 
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
   terraform:
     name: Terraform Validation
@@ -27,12 +31,11 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
 
-      - name: Configure AWS Credentials
+      - name: Configure AWS Credentials (OIDC)
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION }}
+          role-to-assume: arn:aws:iam::841031789151:role/github-actions-terraform
+          aws-region: ap-south-1
 
       - name: Terraform Format Check
         run: terraform fmt -check
