@@ -22,3 +22,7 @@ output "public_dns" {
   description = "Public DNS"
   value       = aws_instance.quiz_app_server.public_dns
 }
+output "elastic_ip" {
+  description = "Elastic IP Address"
+  value       = aws_eip.quiz_app_eip.public_ip
+}
