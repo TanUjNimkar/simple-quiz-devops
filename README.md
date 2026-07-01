@@ -276,10 +276,48 @@ Quiz Application
 
 ---
 
+---
+
+# 🙏 Acknowledgements
+
+This project is built on top of the original Simple Quiz application.
+
+Original Repository:
+https://github.com/RupamG/simple-quiz
+
+Original Live Demo:
+https://quick-quiz-app.netlify.app/
+
+Special thanks to the original contributors:
+
+- **Rupam Gogoi** ([@RupamG](https://github.com/RupamG)) for creating the original Quiz Application.
+- **Dav.O.** ([@DavOlufuwa](https://github.com/DavOlufuwa)) for contributing to the original project.
+
+This repository extends the original application with a complete DevOps implementation, including:
+
+- ✅ GitHub Actions CI/CD
+- ✅ Docker & Docker Hub
+- ✅ Terraform Infrastructure as Code
+- ✅ AWS EC2 Deployment
+- ✅ Amazon S3 Remote Terraform State
+- ✅ DynamoDB State Locking
+- ✅ GitHub OIDC Authentication
+- ✅ Elastic IP Management
+- ✅ Automated Infrastructure Validation
+- ✅ Automated Application Deployment
+
+The DevOps architecture, infrastructure automation, CI/CD pipelines, cloud deployment, and documentation in this repository were implemented independently as part of this learning and portfolio project.
+
+---
+
+
+
 # 👨‍💻 Author
 
 **Tanuj Nimkar**
 
-GitHub
+GitHub: https://github.com/TanUjNimkar
 
-https://github.com/TanUjNimkar
+LinkedIn: www.linkedin.com/in/tanuj-nimkar
+
+Email: tanujnimkar.cloud@gmail.com
